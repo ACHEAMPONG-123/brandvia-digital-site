@@ -1,0 +1,21 @@
+# OS and system files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Logs and caches
+*.log
+.cache/
+*.tmp
+
+# Environment or config files (if you ever add them)
+.env
+.env.local
+
+# Build or deploy outputs (optional if you ever use them)
+dist/
+build/
