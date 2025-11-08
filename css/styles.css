@@ -2614,14 +2614,17 @@ td:last-child {
 }
 
 .text-display-title {
-    font-size     : var(--text-display-1);
+    /* Use a safe, responsive clamp with a valid variables fallback */
+    font-size     : clamp(2.4rem, 5vw, var(--text-xxl));
     line-height   : 1.0717;
     letter-spacing: -0.015em;
     margin-top    : 0;
-    width: 100%;
+    width         : 100%;
     margin-bottom : var(--vspace-1_5);
-    text-align: center;
+    text-align    : center;
 }
+
+
 
 /* ------------------------------------------------------------------- 
  * ## section header
@@ -2842,12 +2845,13 @@ td:last-child {
     }
 
     .section-header .text-display-title {
-        font-size: var(--text-xxl);
+        font-size: var(--text-md);
+        
     }
 
     .section-header::before {
-        font-size: 7em;
-        left     : 0;
+        font-size: 4em;
+       /*  left     : 0; */
     }
 }
 
@@ -2946,7 +2950,7 @@ td:last-child {
  * ------------------------------------------------------------------- */
 .s-header {
     --header-height : 72px;
-    --logo-width    : 18.2rem;
+    --logo-width    : 35.2rem;
     --width-grid-max: calc(var(--width-sixteen-cols) - calc(var(--gutter) * 2));
     --box-shadow    : 0 1px 1px rgba(0, 0, 0, 0.02),
                       0 2px 2px rgba(0, 0, 0, 0.02),
@@ -3035,14 +3039,26 @@ td:last-child {
 }
 
 .s-header__logo figure {
-    width         : var(--logo-width);
-    margin        : 0;
-    vertical-align: bottom;
-    font-family: 'Roboto';
+    width: var(--logo-width);
+    margin: 0;
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.1rem; /* closer logo and text */
+    font-family: 'Roboto', var(--font-1);
     color: white;
-    font-size: larger;
-    text-shadow:-1px -1px 0 #000000cb,
-    
+    font-size: var(--text-lg);
+    text-shadow: -1px -1px 0 rgba(0,0,0,0.75);
+}
+
+.s-header__logo figure img {
+    width: 80px; 
+    height: auto;
+}
+
+
+.s-header__logo figure .logo-text {
+    margin: 0;
 }
 
 /* --------------------------------------------------------------------
